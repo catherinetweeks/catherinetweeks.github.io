@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catherine's Goodreads (Technical)</title>
+    <link id="theme-style" rel="stylesheet" href="./Style/light.css">
+    <script src="./js/script.js"></script>
+</head>
+<body>
+    <header>
+        <div class="header-band">
+            <img src="images/goodreads.jpg" alt="Goodreads Logo" class="logo">
+            <h1>Catherine's Goodreads</h1>
+        </div>
+    </header>
+
+    <div class="about-container">
+        <p>What kinds of books do I like? Learn more about me here:</p>
+        <button id="about" onclick="ShowText()">About Me</button><p></p>
+    </div>
+    <p id="about-target"></p>
+
+    <div class="container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <h3>Navigation</h3>
+            <ul>
+                <li><a href="https://www.goodreads.com" target="_blank">Goodreads Main Page</a></li>
+                <li><a href="../main.html">Back to Homework</a></li>
+            </ul>
+            <button id="dark-mode" onclick="toggleTheme()">Dark Mode</button>
+        </nav>
+
+        <!-- Main div -->
+        <div class="main-content">
+            <table>
+                <tr>
+                    <th>Book Cover</th>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Year Published</th>
+                </tr>
+                <tr>
+                    <td><img src="./images/pachinko.png" alt="Pachinko Book Cover"></td>
+                    <td>Pachinko</td>
+                    <td>Min Jin Lee</td>
+                    <td>2017</td>
+                    <td><a href="pachinko.html">My Review</a></td>
+                </tr>
+                <tr>
+                    <td><img src="./images/numero.jpg" alt="Numero Deux Book Cover"></td>
+                    <td>Numéro Deux</td>
+                    <td>David Foenkinos</td>
+                    <td>2022</td>
+                    <td><a href="numerodeux.html">My Review</a></td>
+                </tr>
+                <tr>
+                    <td><img src="./images/grokking.jpg" alt="Grokking Algorithms Book Cover"></td>
+                    <td>Grokking Algorithms</td>
+                    <td>Aditya Y. Bhargava</td>
+                    <td>2016</td>
+                    <td><a href="grokking.html">My Review</a></td>
+                </tr>
+
+            </table>
+        </div>
+    </div>
+    
+</body>
+</html>

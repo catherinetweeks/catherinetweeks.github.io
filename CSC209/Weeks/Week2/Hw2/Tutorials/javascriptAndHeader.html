@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Catherine Weeks">
+    <title>HTML & Javascript</title>
+    <link rel="stylesheet" href="./Styles/style.css">
+    <script src="./js/functions.js"></script>
+    <script src="./js/functions.js"></script>
+    <script>
+        function ChangeSize() {
+            var x = document.getElementById('text-size').style.fontSize = "25px";
+        }
+    </script>
+</head>
+<body>
+    <h1>HTML & JavaScript</h1>
+
+    <h3>Script within an HTML element</h3>
+
+    <button type="button"
+    onclick="document.getElementById('text-color').style.color = 'red'">
+    Click me to change the color of the text below.</button>
+
+    <p id="text-color">Hello world!</p>
+
+    <h3>Script written in the header</h3>
+    <button onclick="ChangeSize()">Click me to change the size of the text below.</button>
+
+    <p id="text-size">Hello world!</p>
+
+    <h3>Script written in separate file</h3>
+    <button onclick="ChangeImage()">Click me to change image sources</button>
+    <img id="change-photo" src="../Images/campus.jpeg" width="500">
+    <p>(Both photos are mine)</p>
+
+</body>
+
+</html>

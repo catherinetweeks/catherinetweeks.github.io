@@ -1,0 +1,136 @@
+body {
+    background-color: #1e1e1e;
+    color: #e0dace;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    margin: 4vw;
+}
+
+.header-band {
+    display: flex; 
+    align-items: center; 
+    gap: 15px;
+}
+
+.logo {
+    width: 50px;
+    height: auto;
+}
+
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    padding-bottom: 20px;
+}
+
+h1 {
+    padding: 1vw;
+    color: #f0eada;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    background-color: #262626;
+}
+
+td {
+    border: 1px solid #4a4238;
+    padding: 10px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+th {
+    padding: 10px;
+    text-align: left;
+    vertical-align: middle;
+    font-weight: bold;
+    background-color: #332d27;
+    color: #e8ded1;
+    border: 1px solid #4a4238;
+}
+
+td img {
+    width: 10vw;
+    height: auto;
+    display: block;
+}
+
+/* Links inside table */
+td a {
+    color: #8ab4f8;
+}
+
+td a:hover {
+    text-decoration: underline;
+    color: #adcce9;
+}
+
+.container {
+    display: flex;
+    gap: 40px;
+    max-width: 80%;
+    margin: 0 auto; 
+    padding: 0 20px;
+}
+
+/* About button section */
+.about-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    font-weight: bold;
+}
+
+#about-target {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #d1c7b7;
+}
+
+#about, #dark-mode {
+    margin: 10px;
+    background-color: #382d24;
+    color: #e0dace;
+    border: 1px solid #5a4a3c;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Sidebar styling */
+.sidebar h3 {
+    margin-top: 0;
+    color: #e0dace;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+
+.sidebar li {
+    margin-bottom: 10px;
+}
+
+.sidebar a {
+    color: #d2b48c;
+    text-decoration: none;
+}
+
+.sidebar a:hover {
+    color: #e6ccaa;
+}
+
+.main-content {
+    flex-grow: 1;
+}
