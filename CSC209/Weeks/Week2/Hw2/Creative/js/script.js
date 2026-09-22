@@ -23,7 +23,7 @@ function toggleTheme() {
         button.textContent = "Toggle Light Mode";
     // Otherwise puts sight into light mode and changes button text accordingly
     } else {
-        theme.setAttribute("href", "./Style/light.css");
+        theme.setAttribute("href", "./style/light.css");
         button.textContent = "Toggle Dark Mode";
     }
 }
