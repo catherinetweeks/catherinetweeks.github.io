@@ -17,13 +17,11 @@ function toggleTheme() {
     let theme = document.getElementById("theme-style");
     let button = document.getElementById("dark-mode");
 
-    // Check if current style path is light.css, if so, puts site into dark mode
-    if (theme.getAttribute("href").includes("light.css")) {
-        theme.setAttribute("href", "./style/dark.css");
-        button.textContent = "Toggle Light Mode";
-    // Otherwise puts sight into light mode and changes button text accordingly
-    } else {
+    if (theme.getAttribute("href").endsWith("dark.css")) {
         theme.setAttribute("href", "./style/light.css");
         button.textContent = "Toggle Dark Mode";
+    } else {
+        theme.setAttribute("href", "./style/dark.css");
+        button.textContent = "Toggle Light Mode";
     }
 }
