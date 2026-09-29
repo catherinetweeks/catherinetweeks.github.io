@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catherine's Goodreads (Technical)</title>
+    <link id="theme-style" rel="stylesheet" href="./Technical/css/light.css">
+</head>
+<body>
+    <header>
+        <div class="header-band">
+            <h1>Catherine's Goodreads</h1>
+        </div>
+    </header>
+
+
+    <div class="about-container">
+        <p>What kinds of books do I like? Learn more about me here:</p>
+        <button id="about" onclick="ShowText()">About Me</button><p></p>
+    </div>
+
+    <p id="about-target"></p>
+
+    <div class="date-container">
+        <button onclick="getDate()">Get Today's Date</button>
+        <p id="today-date"></p>
+    </div>
+
+    <hr>
+
+    <div class="container" id="main-container"> 
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <h3>Navigation</h3>
+            <ul>
+                <li><a href="https://www.goodreads.com" target="_blank">Goodreads Main Page</a></li>
+                <li><a href="./main.html">Back to Homework</a></li>
+            </ul>
+
+            <button id="nav-position" onclick="toggleNav()">Move Navigation Right</button>
+
+            <hr>
+
+            <button id="dark-mode" onclick="toggleTheme()">Dark Mode</button>
+
+            <hr>
+
+
+            <button id="credits" onclick="toggleList()">Credits</button>
+
+
+            <div id="list-container">
+                <ul id="list" style="display:none;">
+                    <li><a href="https://www.w3schools.com/jsref/prop_style_display.asp" target="_blank">W3 Schools Style display Property</a></li>
+                    <li><a href="https://www.w3schools.com/js/js_functions.asp" target="_blank">W3 Schools Javascript Functions</a></li>
+                    <li><a href="https://www.w3schools.com/js/js_if.asp" target="_blank">W3 Schools If Conditions</a></li>
+                    <li><a href="https://www.w3schools.com/js/js_dates.asp" target="blank">W3 Schools Javascript Dates</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Main div -->
+        <div class="main-content">
+            <button id="hide-table" onclick="hideTable()">Hide Table</button>
+            <button id="show-hidden" onclick="showHidden()">Show Hidden Rows</button>
+            <table id="table">
+                <tr id="row0">
+                    <th>Image Representing the Book</th>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Year Published</th>
+                    <th>My Review</th>
+                    <th>Show or hide row</th>
+                </tr>
+                <tr id="row1">
+                    <td><img src="./Technical/images/pachinko.jpg" alt="Photo of Korean Landscape"></td>
+                    <td>Pachinko</td>
+                    <td>Min Jin Lee</td>
+                    <td>2017</td>
+                    <td><a href="./Technical/pachinko.html">My Review</a></td>
+                    <td><button onclick="hideRow(1)" id="button-row1">Hide Row</button></td>
+                </tr>
+                <tr id="row2">
+                    <td><img src="./Technical/images/numerodeux.jpg" alt="Empty Movie Theaters"></td>
+                    <td>Numéro Deux</td>
+                    <td>David Foenkinos</td>
+                    <td>2022</td>
+                    <td><a href="./Technical/numerodeux.html">My Review</a></td>
+                    <td><button onclick="hideRow(2)" id="button-row2">Hide Row</button></td>
+                </tr>
+                <tr id="row3">
+                    <td><img src="./Technical/images/grokking.jpg" alt="Code on a computer"></td>
+                    <td>Grokking Algorithms</td>
+                    <td>Aditya Y. Bhargava</td>
+                    <td>2016</td>
+                    <td><a href="./Technical/grokking.html">My Review</a></td>
+                    <td><button onclick="hideRow(3)" id="button-row3">Hide Row</button></td>
+                </tr>
+
+            </table>
+        </div>
+    </div>
+
+    <script src="./Technical/js/script.js"></script>
+</body>
+</html>

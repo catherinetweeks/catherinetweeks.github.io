@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops, Functions, Objects, & Events</title>
+    <script>
+        const FRUITS = ["apple", "peach", "pear", "mango"];
+    </script>
+</head>
+<body>
+    <h1>Loops, Functions, Objects, & Events</h1>
+
+
+    <h2>Loops</h2>
+    
+    <h3>For Loops</h3>
+    <p id="fruitloops"></p>
+    <script>
+        let len = FRUITS.length;
+
+        let text = "";
+        for (let i=0; i < len; i++) {
+            text += FRUITS[i]
+        };
+
+        document.getElementById("fruitloops").innerHTML = text;
+    
+    </script>
+
+    <h3>While Loops</h3>
+    <p id="fruitloop2"></p>
+    <script>
+        let newText = "";
+        let i = 0;
+
+        while (FRUITS[i]) {
+            newText += FRUITS[i];
+            i++;
+        };
+
+        document.getElementById("fruitloop2").innerHTML = newText;
+    </script>
+
+    <h2>Functions</h2>
+
+    <p id="hello"></p>
+
+    <script>
+        function sayHello() {
+            document.getElementById("hello").innerHTML = "hello!"
+        };
+
+        // parameters
+        function fullName(firstName, lastName) {
+        return firstName + " " + lastName;
+        }
+
+        let name = fullName("John", "Doe");
+
+        // arguments
+        x = sumAll(1, 123, 500, 115, 44, 88);
+
+        function sumAll() {
+        let sum = 0;
+        for (let i = 0; i < arguments.length; i++) {
+            sum += arguments[i];
+        }
+        return sum;
+        }
+
+        // arrow syntax
+        const add = (a, b) => {
+            return a + b;
+            };
+    </script>
+    <button onclick="sayHello()">Press to Get Greeting</button>
+
+    <h2>Objects</h2>
+    <p>Cat names:</p>
+    <p id="cats"></p>
+
+    <script>
+        const cat = {
+            name: "Finley",
+            age: 11,
+            color: "siamese",
+            nameAge: function() {
+                return this.name + ", age:" + this.age;
+            }
+        };
+
+        const otherCat = {
+            name: "Momo",
+            age: 6,
+            color: "stripey"
+        };
+
+        document.getElementById("cats").innerHTML = cat.nameAge() + ", " + otherCat.name;
+    </script>
+
+    <h2>Events</h2>
+    
+    <h3>On Click</h3>
+    <p id="demo1"></p>
+    <button onclick="document.getElementById('demo1').innerHTML = Date()">The time is?</button>
+
+    <h4>Event Listener</h4>
+    <button id="myBtn">Click me</button>
+
+    <p id="demo"></p>
+
+    <script>
+    const btn = document.getElementById("myBtn");
+
+    // Add EventListener to btn
+    btn.addEventListener("click", function () {
+    document.getElementById("demo").innerHTML = Date();
+    });
+    </script>
+
+    <h3>On Mouse Over</h3>
+    <div id="box" style="width:200px;height:100px;padding:16px;border:1px solid #000;">
+    move the mouse over this box
+    </div>
+
+    <script>
+    const box = document.getElementById("box");
+
+    // Let box listen for mouseover
+    box.addEventListener("mouseover", function () {
+    box.innerHTML = "mouse is in";
+    });
+
+    // Let box listen for mouseout
+    box.addEventListener("mouseout", function () {
+    box.innerHTML = "mouse is out";
+    });
+    </script>
+
+    <!--Other mouse events: click, dblclick, mousedown/mouseup, mousemove, mouseover, mouseout, mouseenter, mouseleave, wheel, drag events (dragstart, dragend etc.)-->
+
+    <h4>Keyboard Events</h4>
+    <input id="k" type="text" placeholder="Press a key">
+
+    <p id="demo3"></p>
+
+    <script>
+    const k = document.getElementById("k");
+
+    // Let k listen for keydown
+    k.addEventListener("keydown", function (event) {
+    // Then display the event.key
+    document.getElementById("demo3").innerHTML = "You pressed: " + event.key;
+    });
+    </script>
+
+    <h4>Load Events</h4>
+    <p id="demo4"></p>
+
+    <script>
+    // Add Event Listener to document
+    document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("demo4").innerHTML = "HTML is loaded!";
+    });
+    </script>
+</body>
+</html>

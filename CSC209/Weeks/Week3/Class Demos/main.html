@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practicing JS Canvas</title>
+    <script>
+        
+    </script>
+</head>
+<body>
+    <h1>Draw 3 Points</h1>
+    <canvas id="pointsCanvas" width="600" height="600" style="border:1px solid #000;"></canvas>
+
+    <script>
+        const CANVAS = document.getElementById("pointsCanvas");
+        const CTX = CANVAS.getContext("2d");
+
+        // dot 1
+        CTX.beginPath();
+        CTX.arc(50,50,10,0,2*Math.PI);
+        CTX.strokeStyle = "blue";
+        CTX.stroke();
+
+        // dot 2
+        CTX.beginPath()
+        CTX.arc(110, 50, 10, 0, 2*Math.PI);
+        CTX.strokeStyle = "red";
+        CTX.stroke();
+
+        // dot 3
+        CTX.beginPath()
+        CTX.arc(170, 50, 10, 0, 2*Math.PI);
+        CTX.strokeStyle = "green";
+        CTX.stroke();
+
+        // Create a line
+        CTX.beginPath();
+        CTX.moveTo(60,50);
+        CTX.lineTo(160, 50);
+        CTX.lineWidth = 5;
+        CTX.strokeStyle = "black";
+        CTX.stroke();
+
+        // Create a rectangle
+        CTX.beginPath();
+        CTX.rect(300, 300, 150, 100);
+        CTX.lineWidth = 2;
+        CTX.stroke();
+
+        // Create linear gradient
+        const grad=CTX.createLinearGradient(0,0,280,0);
+        grad.addColorStop(0, "lightblue");
+        grad.addColorStop(1, "darkblue");
+
+        // Fill text with gradient
+        CTX.font = "50px Arial";
+        CTX.fillStyle = grad;
+        CTX.fillText("~Gradient Text~",10,200);
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Output, Syntax & If Statements</title>
+</head>
+<body>
+    <h1>Output, Syntax & If Statements</h1>
+
+    <!-- Output -->
+    <p id="demo"></p>
+    <script>
+        document.getElementById("demo").innerHTML = "<h2>Hello World</h2>";
+    </script>
+
+    <script>
+        document.getElementById("demo").innerText = "Hello world!";
+    </script>
+
+    <script>
+        document.write(5+6);
+    </script>
+
+    <button type="buton" onclick="document.write(5+6)">Try it!</button>
+
+    <script>
+        window.alert(5+6);
+    </script>
+
+
+
+    <!-- Declaring Variables -->
+    <p> Adding 6 & 7. Results printed here:</p>
+    <p id="testing"></p>
+    <script>
+        let x = 6;
+        let y = 7;
+
+        let z = x + y;
+
+        document.getElementById("testing").innerHTML = z;
+
+    </script>
+    <!-- let declares a variable, const declares a constant -->
+
+
+    <!-- If Statements -->
+    <p id="greeting"></p>
+    <script>
+        let hour = 10;
+        let greeting;
+
+        if (hour < 18) {
+            greeting = "Good day!"
+        } else if (hour > 8) {
+            greeting = "Good evening!"
+        } else {
+            greeting = "Good morning!"
+        };
+
+        document.getElementById("greeting").innerHTML = greeting;
+    </script>
+
+    <!-- Switch Control Flow-->
+    <h3>Today's date is:</h3>
+    <p id="dateDemo"></p>
+    <script>
+        let day;
+
+        switch (new Date().getDay()) {
+        case 0:
+            day = "Sunday";
+            break;
+        case 1:
+            day = "Monday";
+            break;
+        case 2:
+            day = "Tuesday";
+            break;
+        case 3:
+            day = "Wednesday";
+            break;
+        case 4:
+            day = "Thursday";
+            break;
+        case 5:
+            day = "Friday";
+            break;
+        case 6:
+            day = "Saturday";
+        };
+
+        document.getElementById("dateDemo").innerHTML = day;
+    </script>
+
+    
+</body>
+</html>
