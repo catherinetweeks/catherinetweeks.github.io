@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes and Sets</title>
+</head>
+<body>
+    <h1>Classes and Sets</h1>
+    <a href="./tutorial.html">Back to main page</a>
+
+    <h2>Classes</h2>
+    <p>Making a cat class:</p>
+    <p id="demo"></p>
+    <p id="demo2"></p>
+    <script>
+        class Cat {
+        constructor(name, color) {
+            this.name = name;
+            this.color = color;
+        }
+        color() {
+            return this.name + " is " + this.color;
+        }
+        }
+
+        const finleyCat = new Cat("Finley", "Siamese");
+        document.getElementById("demo").innerHTML=
+        "My cat is named " + finleyCat.name + ".";
+
+        class Kitten extends Cat {
+            constructor(age, name, color) {
+                super(name, color);
+                this.age = age;
+            }
+
+            ageInMonths() {
+                return this.age / 4;
+            }
+        }
+
+        const newKitten = new Kitten(12, "Snowball", "white",);
+        document.getElementById("demo2").innerText += "\nMy new kitten's name is " + newKitten.name + "and it is " + newKitten.ageInMonths() + " months old which is " + newKitten.age + " weeks"
+    </script>
+
+    <h2>Sets</h2>
+    <p id="demo3">Contents of the set: </p>
+    <p id="demo4"></p>
+    <script>
+        // create set
+        const letters = new Set();
+
+        // add values with add
+        const a = "a";
+        const b = "b";
+        const c = "c";
+        letters.add(a);
+        letters.add(b);
+        letters.add(c);
+
+        // adding multiple letters to show that it only keeps one of them
+        letters.add(a);
+        letters.add(a);
+        letters.add(a);
+        letters.add(a);
+    
+        let lettersString = "";
+        for (const letter of letters) {
+            lettersString += letter + " ";
+        }
+
+        document.getElementById("demo3").innerText += " " + lettersString;
+    </script>
+</body>
+</html>

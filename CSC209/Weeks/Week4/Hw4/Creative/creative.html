@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graph Illustrator</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script>
+        const NRPTS = 5;
+        const NREDGES = 5;
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Graph Illustrator</h1>
+            <p id="nrpts">Number of points: </p>
+            <p id="nredges">Number of edges: </p>
+    </header>
+
+    <div id="menu">
+        <button id="redraw">Redraw Graph</button>
+        <button id="get-coords">Get Coordinates</button>
+        <a href="../main.html">Back to main page</a>
+    </div>
+
+    <main class="main-content">
+        <canvas id="pointsCanvas" width="800" height="600" style="border:1px solid #000;"></canvas>
+
+        <div>
+            <p id="display-coords"></p>
+        </div>
+    </main>
+
+
+    <script type="module">
+        import { drawAll } from './js/graphicFunctions.js';
+        import { getPoints, getEdges, displayCoords } from './js/domFunctions.js'
+            
+        getPoints(NRPTS);
+        getEdges(NREDGES);
+
+        let points = drawAll(NRPTS, NREDGES);
+
+        document.getElementById("redraw").addEventListener("click", () => {
+        points = drawAll(NRPTS, NREDGES);
+            document.getElementById("display-coords").innerText = "";
+        });
+
+        document.getElementById("get-coords").addEventListener("click", () => {
+            displayCoords(points);
+        });
+
+    </script>
+</body>
+</html>

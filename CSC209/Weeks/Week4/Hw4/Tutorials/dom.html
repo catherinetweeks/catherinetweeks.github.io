@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <h1>
+        HTML DOM
+    </h1>
+    <a href="./tutorial.html">Back to main page</a>
+    
+    <h2>
+        HTML DOM (Document Object Model)
+    </h2>
+    <p id="demo"></p>
+
+    <script>
+    // Access a paragraph Element
+    const myPara = document.getElementById("demo");
+
+    // Change the content of the Element
+    myPara.innerHTML = "Hello World!";
+    </script>
+    <ul>
+        DOM API abilities:
+        <li>Find/select elements</li>
+        <li>Change content and attributes</li>
+        <li>Add/remove/modify elements</li>
+        <li>Change styles</li>
+        <li>Add event listeners</li>
+    </ul>
+
+    <script>
+        //Examples of getting elements
+        const element = document.getElementsByTagName("p");
+        const x = document.getElementsByClassName("intro");
+    </script>
+
+    <!--Change inner HTML-->
+    <h1 id="id01">Old Heading</h1>
+
+    <script>
+        const element2 = document.getElementById("id01");
+        element2.innerHTML = "New Heading";
+    </script>
+
+    <!--Dynamic HTML Content-->
+    <p id="demo3"></p>
+    <script>
+    document.getElementById("demo3").innerHTML = "Date : " + Date();
+    </script>
+
+    <!--Changing CSS-->
+    <p id="p2">Hello World!</p>
+    <script>
+    document.getElementById("p2").style.color = "blue";
+    </script>
+
+</body>
+</html>

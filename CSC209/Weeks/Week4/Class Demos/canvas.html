@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practicing JS Canvas</title>
+    <script>
+        
+    </script>
+</head>
+<body>
+    <h1>Drawing Graphs</h1>
+
+    <p id="num-points">Number of points:</p>
+
+    <canvas id="pointsCanvas" width="600" height="600" style="border:1px solid #000;"></canvas>
+
+    <script>
+        const NUMPOINTS = 10;
+        const WIDTH = 500;
+        const HEIGHT = 500;
+        const CANVAS = document.getElementById("pointsCanvas");
+        const CTX = CANVAS.getContext("2d");
+
+        document.getElementById("num-points").innerText += NUMPOINTS;
+
+        // Point Class (creates singular point)
+        class Point {
+            constructor(x,y) {
+                this.x = x;
+                this.y = y;
+            }
+
+            draw(ctx) {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, 10, 0, 2 * Math.PI);
+                ctx.strokeStyle = "black";
+                ctx.fillStyle = "white";
+                ctx.stroke();
+                ctx.fill();
+            }
+
+            drawPointLabel(ctx, lab) {
+                ctx.font = "14px Arial";
+                ctx.fillStyle = "black";
+                ctx.fillText(lab, this.x -4, this.y + 4);
+            }
+        }
+
+        // Points Class (creates array of points)
+        class Points extends Array {
+            constructor(maxPts) {
+                super(maxPts);
+                this.maxPts = maxPts
+            }
+
+            translate() {
+                let x = Math.random() * WIDTH;
+                let y = Math.random() * HEIGHT;
+                return [x, y];
+            }
+
+            generatePoints() {
+                for (let i = 0; i < this.maxPts; i++) {
+                    let [x, y] = this.translate();
+                    let point = new Point(x, y);
+                    this[i] = point;
+                }
+            }
+
+            drawPoints(ctx) {
+                this.generatePoints();
+                for (let i = 0; i < this.length; i++) {
+                    let point = this[i];
+                    point.draw(ctx);
+                    point.drawPointLabel(ctx, i);
+                }
+            }
+
+        }
+
+
+        // Edge Class (creates singular edge given two points)
+        class Edge {
+            constructor(pointA, pointB) {
+                this.pointA = pointA;
+                this.pointB = pointB;
+            }
+
+            drawEdge(ctx) {
+                ctx.beginPath();
+                ctx.moveTo(this.pointA.x, this.pointA.y);
+                ctx.lineTo(this.pointB.x, this.pointB.y);
+                ctx.stroke();
+            }
+
+            // labelEdge() {
+
+            // }
+        }
+
+        // Edges Class
+        class Edges {
+            constructor(points) {
+                this.points = points;
+            }
+
+            makePairs() {
+                let pairs = [];
+                for (let i = 0; i < this.points.length; i += 2) {
+                    pairs.push([this.points[i], this.points[i + 1]]);
+                }
+                return pairs;
+            }
+
+            drawEdges(ctx) {
+                let pointPairs = this.makePairs();
+                for (let i = 0; i < pointPairs.length; i++) {
+                    let pair = pointPairs[i];
+                    let newEdge = new Edge(pair[0], pair[1]);
+                    newEdge.drawEdge(ctx);
+
+                }
+
+            }
+        }
+
+
+        let points = new Points(NUMPOINTS);
+        points.drawPoints(CTX);
+        // console.log(points);
+
+        // let edge1 = new Edge(points[0], points[1]);
+        // edge1.drawEdge(CTX);
+
+        let edges = new Edges(points);
+        edges.drawEdges(CTX);
+
+        
+ 
+    </script>
+
+</body>
+</html>
