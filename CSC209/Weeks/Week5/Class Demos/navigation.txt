@@ -1,0 +1,31 @@
+Week 1 Tutorials:
+ - attributes
+ - basics
+ - headings
+ - images
+ - links
+ - lists
+ - paragraphs
+ - style
+ - tables
+ 
+Week 2 Tutorials:
+ - classes
+ - id
+ - javascript and html head
+ - layout and responsive design
+ - navigation
+ - website layout
+
+Week 3 Tutorials:
+ - Output, Syntax & If Statements
+ - Loops, Functions, Objects, & Events
+
+Week 4 Tutorials:
+ - classes
+ - dom
+ 
+Week 5 Tutorials:
+ - accordion dropdowns
+ - snapshot of canvas
+ - w3 schools website layouts 
