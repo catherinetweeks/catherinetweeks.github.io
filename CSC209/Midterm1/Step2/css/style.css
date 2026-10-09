@@ -1,0 +1,87 @@
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    color: #050426;
+}
+
+header {
+    background-color: #656874;
+    color: white;
+    width: 100%;
+    padding: 50px 0;
+    text-align: center;
+    margin: 0;
+}
+
+header h1 {
+    margin: 0;
+}
+
+
+.sidebar {
+    width: 200px;
+    flex-shrink: 0;
+    padding-right: 15px;
+    padding-left: 10px;
+    background-color: #e7e7e7;
+}
+
+#main {
+    display: flex;
+    flex-direction: row;
+}
+
+a {
+    color: white;
+}
+
+button {
+    background-color: #b6bec3;
+    color: white;
+    border: none;
+    padding: 8px;
+    margin-top: 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-family:'Courier New', Courier, monospace;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #9fa8ad;
+}
+
+.main-content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+}
+
+canvas {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+
+#display-coords {
+    margin: 0;
+    padding: 10px;
+    font-family: monospace;
+    white-space: pre-wrap;
+}
+
+#display-coords:empty {
+    display: none;
+}
+
+footer {
+    padding: 20px;
+    text-align: center;
+    background: #ddd;
+    position: relative;
+
+}
