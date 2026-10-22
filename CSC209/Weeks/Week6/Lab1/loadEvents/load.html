@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Load Events</title>
+</head>
+<body>
+    <h1>Load Events</h1>
+    <div>
+        <h2>DOMContent Load</h2>
+        <p id="demo"></p>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("demo").innerHTML = "HTML is loaded!";
+            });
+        </script>
+    </div>
+    <div>
+        <h2>Image Load</h2>
+        <img id="myImg" src="https://www.w3schools.com/images/w3schools_green.jpg" width="120">
+        <p id="demo2"></p>
+
+        <script>
+            const img = document.getElementById("myImg");
+
+            // Add Event Listener to img
+            img.addEventListener("load", function () {
+            document.getElementById("demo2").innerHTML = "Image loaded!";
+            });
+        </script>
+    </div>
+</body>
+</html>

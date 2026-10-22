@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard Events</title>
+</head>
+<body>
+    <h1>Keyboard Events</h1>
+
+    <h2>Key Down</h2>
+    <div>
+        <input id="key" type="text" placeholder="Press a key">
+
+        <p id="demo"></p>
+
+        <script>
+            const keydown = document.getElementById("key");
+
+            keydown.addEventListener("keydown", function (event) {
+                document.getElementById("demo").innerHTML = "You pressed: " + event.key;
+            });
+        </script>
+    </div>
+
+    <h2>Key Up</h2>
+    <div>
+        <div id="keyup" style="width:200px;height:100px;padding:16px;border:1px solid #000;">
+            Hold down any key then let go after a couple seconds.
+        </div>
+
+        <script>
+            const keyup = document.getElementById("keyup");
+
+            document.addEventListener("keyup", function(event) {
+                keyup.innerHTML = "You released: " + event.key;
+            });
+        </script>
+    </div>
+</body>
+</html>

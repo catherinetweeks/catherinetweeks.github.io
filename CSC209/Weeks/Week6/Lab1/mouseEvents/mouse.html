@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Events</title>
+</head>
+<body>
+    <h1>Mouse Events</h1>
+
+    <h2>Mouse Over & Mouse Out</h2>
+    <div>
+        <div id="hoverBox" style="width:200px;height:100px;padding:16px;border:1px solid #000;">
+        Move mouse over this box
+        </div>
+
+        <script>
+            const box = document.getElementById("hoverBox");
+
+            hoverBox.addEventListener("mouseover", function () {
+                hoverBox.innerHTML = "Mouse is over!";
+            });
+
+            hoverBox.addEventListener("mouseout", function () {
+                hoverBox.innerHTML = "Mouse is out!";
+            });
+        </script>
+    </div>
+
+
+    <h2>Click & Double Click</h2>
+    <div>
+        <button id="clickBox" style="width:200px;height:100px;padding:16px;border:1px solid #000;">
+            Click or double click this box.
+        </button>
+
+        <script>
+            const clickBox = document.getElementById("clickBox");
+
+            clickBox.addEventListener("click", function () {
+                clickBox.innerHTML = "I have been clicked! Now try double clicking";
+            });
+
+            clickBox.addEventListener("dblclick", function () {
+                clickBox.innerHTML = "I have been double clicked! Now try clicking";
+            });
+        </script>
+    </div>
+
+    <h2>Wheel</h2>
+    <div>
+        <div id="wheelBox" style="width:200px;height:100px;padding:16px;border:1px solid #000;">
+        Put mouse on this box and scroll
+        </div>
+
+        <script>
+            const wheelBox = document.getElementById("wheelBox");
+
+            wheelBox.addEventListener("wheel", function () {
+                wheelBox.innerHTML = "You scrolled!";
+            });
+        </script>
+    </div>
+        
+
+
+</body>
+</html>

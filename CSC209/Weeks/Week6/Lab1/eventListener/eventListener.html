@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Listeners</title>
+</head>
+<body>
+    <h1>Event Listeners</h1>
+    <p>How do event listeners work? <br> They attach to an element without overwriting existing event handlers. You can add many event handles to one element, you can add many event handlers to the same type of event, and they can listen to events from DOM objects (not only HTML elements)</p>
+    <p>You can also use removeEventListener()</p>
+
+    <h2>Adding an Event Listener that calls a function</h2>
+
+    <button id="myBtn">Try it</button>
+
+    <script>
+        document.getElementById("myBtn").addEventListener("click", myFunction);
+
+        function myFunction() {
+            alert ("Hello World!");
+        }
+    </script>
+
+    <h2>Adding an event listener to the window object</h2>
+
+    <p>Try resizing this browser window to trigger the "resize" event handler.</p>
+
+    <p id="demo"></p>
+
+    <script>
+    window.addEventListener("resize", function(){
+    document.getElementById("demo").innerHTML = Math.random();
+    });
+    </script>
+
+    <h2>Event Bubbling and Event Capturing</h2>
+    <p>Event propagation is a way of defining the element order when an event occurs. If you have a paragraph inside of a div, and the user clicks on the paragraph, which element's click should be handled first?</p>
+    <p>Bubbling: the inner most element's event is handled first <br>Capturing: the outer most element's event is handld first then the inner 
+    </p>
+    <p>You can specify the propagation type by using the use capture parameter: addEventListener(event, function, useCapture); (true or false, false is default and it uses bubbling)</p>
+
+</body>
+</html>

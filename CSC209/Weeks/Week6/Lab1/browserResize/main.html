@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Window Size Tracker</title>
+
+    <style>
+        body {
+            text-align: center;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Window Size Tracker</h1>
+
+    <p>Width: <span id="width"></span> px</p>
+    <p>Height: <span id="height"></span> px</p>
+
+    <script>
+        const width = document.getElementById("width");
+        const height = document.getElementById("height");
+
+        window.addEventListener("resize", function() {
+            width.textContent = window.innerWidth;
+            height.textContent = window.innerHeight;
+        });
+
+        width.textContent = window.innerWidth;
+        height.textContent = window.innerHeight;
+    </script>
+</body>
+</html>
