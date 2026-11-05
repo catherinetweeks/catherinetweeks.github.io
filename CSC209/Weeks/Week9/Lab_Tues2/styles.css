@@ -30,3 +30,15 @@ td {
 tr:nth-child(even) {
     background-color: #f7f9fc;
 }
+
+th {
+
+    cursor: pointer;
+
+}
+
+th:hover {
+
+    background-color: #314b7a;
+
+}

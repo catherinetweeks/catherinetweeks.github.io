@@ -8,6 +8,33 @@
     <?php
         $FILENAME = "./users.json";
     ?>
+
+    <script>
+        function sortTable(column) {
+            let table = document.getElementById("usersTable");
+            let rows = Array.from(table.rows).slice(1);
+
+            rows.sort((a, b) => {
+                let x = a.cells[column].innerHTML;
+                let y = b.cells[column].innerHTML;
+
+                if (column === 2) {
+                    return Number(x) - Number(y);
+                }
+
+                // sort text
+                if (x < y) {
+                    return -1;
+                } else if (x > y) {
+                    return 1;
+                } else {
+                    return 0;
+                }
+            });
+
+            rows.forEach(row => table.appendChild(row)); //moves html instead of making a duplicate
+        }
+    </script>
 </head>
 <body>
 
@@ -16,7 +43,12 @@
 
 
         function getTable($usernamesArray) {
-            echo "<table> <tr> <th>Username</th> <th>Password</th> <th>Times Logged In</th> </tr>";
+            echo "<table id='usersTable'> 
+                    <tr>
+                        <th onclick='sortTable(0)'>Username</th>
+                        <th onclick='sortTable(1)'>Password</th>
+                        <th onclick='sortTable(2)'>Times Logged In</th>
+                    </tr>";
             foreach ($usernamesArray as $row) 
                 { 
                     echo '<tr>';
@@ -32,9 +64,5 @@
         getTable($usernamesArray);
 
     ?>
-
-    <script>
-
-    </script>
 </body>
 </html>
